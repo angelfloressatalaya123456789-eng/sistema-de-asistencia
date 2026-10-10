@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Imprima&family=Inter:wght@700&display=swap");
+
+:root {
+  --input-fondo: rgba(255, 255, 255, 0.35);
+  --input-borde: #757575;
+  --input-placeholder: rgba(60, 60, 67, 0.6); /* #3C3C43 al 60% */
+  --input-texto: #3c3c43;
+  --input-icono: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Tipografía del diseño: Inter Bold 16, relleno negro, trazo blanco 1px por fuera */
+body,
+input,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding: 48px 24px;
+  background: #000 url("../image/fondo.png") center / cover no-repeat;
+  color: #000;
+}
+
+.logo {
+  width: 180px;
+  max-width: 60%;
+}
+
+form {
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px 32px;
+  border: 1px solid rgba(66, 133, 244, 0.7);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+h1,
+label {
+  color: #000;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #fff; /* 2px + paint-order = 1px visible por fuera */
+  paint-order: stroke fill;
+}
+
+h1 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+.campo {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.campo i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--input-icono);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px 0 44px;
+    border: 2px solid var(--input-borde);
+    border-radius: 999px;
+    background-color: rgb(217 217 217 / 29%);
+    color: var(--input-texto);
+    font-family: "Imprima", sans-serif;
+    /* font-weight: 400; */
+    font-size: 16px;
+    line-height: normal;
+    letter-spacing: 0;
+    outline: none;
+}
+
+input::placeholder {
+  color: var(--input-placeholder);
+}
+
+input:focus-visible {
+  border-color: #fff;
+}
+
+button {
+  align-self: center;
+  margin-top: 12px;
+  padding: 10px 28px;
+  border: 0;
+  border-radius: 999px;
+  background: #4285f4;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2f6fe0;
+}
+
+button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Tablet y escritorio: lo iremos ajustando en los siguientes pasos */
+@media (min-width: 768px) {
+  body {
+    justify-content: center;
+  }
+
+  form {
+    max-width: 400px;
+  }
+}
